@@ -1,0 +1,28 @@
+@import '../variables.scss';
+
+.Search {
+  display: flex;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  border-radius: 22.5px;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--variant-color);
+  input {
+    width: 100%;
+    border: transparent;
+    padding: 15px;
+    outline: none;
+    color: var(--secundary-color);
+    background: transparent;
+    &::placeholder {
+      color: var(--secundary-color);
+      opacity: 0.75;
+    }
+  }
+  svg {
+    margin-right: 15px;
+    font-size: 2rem;
+  }
+}

@@ -1,0 +1,38 @@
+@import './variables.scss';
+
+html[data-theme='dark'] {
+  --primary-color: #{$dark-color};
+  --secundary-color: #{$light-color};
+  --variant-color: #{$dark-light-color};
+}
+html[data-theme='light'] {
+  --primary-color: #{$light-color};
+  --secundary-color: #{$dark-color};
+  --variant-color: #{$light-dark-color};
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: $font-size;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--secundary-color);
+  background-color: var(--primary-color);
+}
+
+#app {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+main {
+  padding: 20px 10px;
+}

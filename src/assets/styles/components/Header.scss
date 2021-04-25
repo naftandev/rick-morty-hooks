@@ -1,0 +1,49 @@
+@import '../variables.scss';
+
+.Header {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  padding: 20px 10px;
+  align-items: center;
+  figure img {
+    width: 100%;
+  }
+  &__switch {
+    width: 50px;
+    height: 10px;
+    border-radius: 15px;
+    position: relative;
+    align-self: flex-end;
+    background-color: $dark-color;
+    &::after {
+      content: '';
+      display: block;
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      position: absolute;
+      top: calc(50% - 12.5px);
+      left: 5px;
+      background: url('../../statics/light.svg') no-repeat center, $light-color;
+      background-size: 20px;
+      box-shadow: 0 0 2.5px 0px $dark-color;
+      transition: left $transition-time;
+    }
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  input[type='checkbox'] {
+    display: none;
+    &:checked ~ .Header__switch {
+      background-color: $light-color;
+      &::after {
+        left: 20px;
+        background: url('../../statics/dark.svg') no-repeat center, $dark-color;
+        background-size: 15px;
+        box-shadow: 0 0 2.5px 0px $light-color;
+      }
+    }
+  }
+}
